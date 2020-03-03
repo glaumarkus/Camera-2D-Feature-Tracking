@@ -19,7 +19,7 @@ Pipeline
 static std::string paramsFilePath = "../params.txt";
 static PipelineParams params;
 
-void img_pipeline(cv::mat& img){
+void img_pipeline(cv::Mat& img){
 
     // cvt color
     cv::Mat img_gray;
@@ -27,11 +27,11 @@ void img_pipeline(cv::mat& img){
 
     // gaussian blur
     cv::Mat img_blur;
-    cv::GaussianBlur(img_gray, img_blur, cv::Size(kernel_size, kernel_size), sigma_x);
+    //cv::GaussianBlur(img_gray, img_blur, cv::Size(kernel_size, kernel_size), sigma_x);
 
-    string windowName = "Gaussian Blurring";
+    std::string windowName = "Gaussian Blurring";
     cv::namedWindow(windowName, 1); // create window
-    cv::imshow(windowName, img_blur);
+    cv::imshow(windowName, img_gray);
     cv::waitKey(0); // wait for keyboard input before continuing
 
 }
@@ -41,9 +41,10 @@ int main(){
     // start loop with loading params again
     if (!params.fromFile(paramsFilePath)) {
         std::cerr << "Error reading params file" << std::endl;
-        return;
+        return 1;
     }
 
-    cv::mat img = cv::imread("../images/img1gray.png");
+    cv::Mat img = cv::imread("../images/img1gray.png");
     img_pipeline(img);
+    return 0;
 }

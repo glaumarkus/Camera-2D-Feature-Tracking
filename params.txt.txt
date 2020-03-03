@@ -1,3 +1,9 @@
 # GaussianBlur
 kernel_size: 5
 sigma_x: 2.0 
+
+# Corner Detection
+block_size: 2
+aperture_size: 3
+min_response: 100
+harris_k: 0.04

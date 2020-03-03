@@ -10,6 +10,10 @@ struct PipelineParams {
 
   int kernel_size;
   float sigma_x;
+  int block_size;
+  int aperture_size;
+  int min_reponse;
+  double harris_k;
 
 
 
@@ -35,7 +39,14 @@ struct PipelineParams {
         check1 >> kernel_size;
       } else if (paramName == "sigma_x:") {
         check1 >> sigma_x;
-
+      } else if (paramName == "block_size:") {
+        check1 >> block_size;
+      } else if (paramName == "aperture_size:") {
+        check1 >> aperture_size;
+      } else if (paramName == "min_reponse:") {
+        check1 >> min_reponse;
+      } else if (paramName == "harris_k:") {
+        check1 >> harris_k;
       } else {
         std::cerr << "Unrecognized pipeline parameter: " << paramName << std::endl;
         assert(0);

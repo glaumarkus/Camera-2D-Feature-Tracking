@@ -19,6 +19,8 @@ Pipeline
 static std::string paramsFilePath = "../params.txt";
 static PipelineParams params;
 
+
+// featuring blur & sobel_x & sobel_y
 void img_pipeline(cv::Mat& img){
 
     // cvt color
@@ -53,6 +55,23 @@ void img_pipeline(cv::Mat& img){
     cv::namedWindow(windowName, 1); // create window
     cv::imshow(windowName, img_gray);
     cv::waitKey(0); // wait for keyboard input before continuing
+
+}
+
+void img_pipeline2(cv::Mat& img){
+    
+    // Detector parameters
+    int blockSize = 2; // for every pixel, a blockSize × blockSize neighborhood is considered
+    int apertureSize = 3; // aperture parameter for Sobel operator (must be odd)
+    int minResponse = 100; // minimum value for a corner in the 8bit scaled response matrix
+    double k = 0.04; // Harris parameter (see equation for details)
+
+    // Detect Harris corners and normalize output
+    cv::Mat dst, dst_norm, dst_norm_scaled;
+    dst = cv::Mat::zeros(imgGray.size(), CV_32FC1 );
+    cv::cornerHarris( imgGray, dst, blockSize, apertureSize, k, cv::BORDER_DEFAULT ); 
+    cv::normalize( dst, dst_norm, 0, 255, cv::NORM_MINMAX, CV_32FC1, cv::Mat() );
+    cv::convertScaleAbs( dst_norm, dst_norm_scaled );
 
 }
 

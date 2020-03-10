@@ -7,6 +7,7 @@ The goal of this project is to implement and evaluate various keypoint detectors
 	title="result"  />
 </p>
 
+
 ## Data Source
 
 10 Prefiltered images from the [Kitti dataset](http://www.cvlibs.net/datasets/kitti/) are used for the evaluation of this project. The images are then loaded into a deque of length 2, which performs better at inserting/deleting elements than a vector. 
@@ -59,6 +60,8 @@ Overall my recommendation would be to use either one of the following combinatio
 - ORB-BRIEF
 
 They all feature a comparatively great performance in speed and a really low distance of matched keypoints, which means a high likelyhood that the result will be accurate.  
+
+
 
 
 

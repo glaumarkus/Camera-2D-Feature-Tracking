@@ -62,7 +62,10 @@ Overall my recommendation would be to use either one of the following combinatio
 They all feature a comparatively great performance in speed and a really low distance of matched keypoints, which means a high likelyhood that the result will be accurate.  
 
 
-
+<p align="center">
+	<img src="/media/kp_match.gif" alt="result"
+	title="result"  />
+</p>
 
 
 # SFND 2D Feature Tracking

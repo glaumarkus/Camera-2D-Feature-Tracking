@@ -5,7 +5,7 @@ The goal of this project is to implement and evaluate various keypoint detectors
 
 ## Data Source
 
-10 Prefiltered images from the [KITTI Dataset] (http://www.cvlibs.net/datasets/kitti/) are used for the evaluation of this project. The images are then loaded into a deque of length 2, which performs better at inserting/deleting elements than a vector. 
+10 Prefiltered images from the (KITTI Dataset)[http://www.cvlibs.net/datasets/kitti/] are used for the evaluation of this project. The images are then loaded into a deque of length 2, which performs better at inserting/deleting elements than a vector. 
 
 Afterwards keypoint detection of a bunch of detectors is applied to the image (SHITOMASI, HARRIS, FAST, BRISK, ORB, AKAZE, SIFT). To focus only on the vehicle directly in front of us a region of interest filter is then applied to the detected keypoints. This helps in interpreting some of the later derived metrics to evaluate performance. The combinations of detector/descriptor may be changed in the combinations.txt within the parent directory. Deleting all but one is the equivalent of running the programm just on this. Also the visualisation code has been deleted from the soruce file, since all images are exported anyways in the imgs_matches/ folder.
 

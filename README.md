@@ -16,8 +16,7 @@ Afterwards keypoint detection of a bunch of detectors is applied to the image (S
 
 With the result of detected and filtered keypoints, all combinations of valid keypoint descriptors (BRISK, BRIEF, ORB, FREAK, AKAZE, SIFT) are used to describe and match the keypoints of the images within the deque. Matching can be done with nearest neighbor / k- nearest neighbor. k- nearest neighbor features a distance ratio to remove wrong identified matches from the list. For the evaluation I didn't use this feature so the matches from the combination can also be evaluated. This feature as can be changed in the code at the very beginning. 
 
-Evaluation of Combinations
-
+#### Evaluation of Combinations
 <p align="center">
 	<img src="/media/df_extract.PNG" alt="result"
 	title="result"  />

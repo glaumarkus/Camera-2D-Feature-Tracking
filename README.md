@@ -45,7 +45,7 @@ When looking at different describers, it is obvious that they are way less time 
 	title="result"  />
 </p>
 
-For analysing the robustness, I am filtering the original data to remove BRISK, AKAZE and SIFT. Then I want to calculate the percentage of matched points from 2 observations and also give some insight in the accuracy of the detection by the mean distance between keypoints in image 1 and 2. Lastly we take into account the overall speed of the combination.
+For analysing the robustness, I am filtering the original data to remove BRISK, AKAZE and SIFT. Then I want to calculate the percentage of matched points from 2 observations and also give some insight in the accuracy of the detection by the mean distance between keypoints in image 1 and 2. Lastly we take into account the overall speed of the combination. The euclidean distance between matched keypoints has some great variety across all the combinations. High average distance between keypoints can be interpreted as a wrong match, to low distance might be a keypoint in the background or on the street that gives no information about the to be tracked vehicle. Therefore some filtering will need to be applied here. Afterwards I added also a filter to the program that only takes keypoint matches into account that are within one standard deviation of the mean value. This should inprove robustness on correctly identifying vehicle keypoints.
 
 <p align="center">
 	<img src="/media/combs_plots.PNG" alt="result"
